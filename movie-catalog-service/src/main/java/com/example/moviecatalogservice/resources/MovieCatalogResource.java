@@ -31,28 +31,28 @@ public class MovieCatalogResource {
 
         List<String> movieIds = Arrays.asList("id1", "id2");
         List<Rating> ratings = movieIds.stream().map(movieId -> {
-            // return restTemplate.getForObject("http://localhost:8083/rating/" + movieId, Rating.class);
+             return restTemplate.getForObject("http://localhost:8083/rating/" + movieId, Rating.class);
 
-            return webClientBuilder
-                    .build()
-                    .get()
-                    .uri("http://localhost:8083/rating/" + movieId)
-                    .retrieve()
-                    .bodyToMono(Rating.class)
-                    .block();
+//            return webClientBuilder
+//                    .build()
+//                    .get()
+//                    .uri("http://localhost:8083/rating/" + movieId)
+//                    .retrieve()
+//                    .bodyToMono(Rating.class)
+//                    .block();
 
         }).collect(Collectors.toList());
 
         List<CatalogItem> catalogItems = ratings.stream().map(rating -> {
-            // Movie movie = restTemplate.getForObject("http://localhost:8082/movie/" + rating.getMovieId(), Movie.class);
+             Movie movie = restTemplate.getForObject("http://localhost:8082/movie/" + rating.getMovieId(), Movie.class);
 
-            Movie movie = webClientBuilder
-                    .build()
-                    .get()
-                    .uri("http://localhost:8082/movie/" + rating.getMovieId())
-                    .retrieve()
-                    .bodyToMono(Movie.class)
-                    .block();
+//            Movie movie = webClientBuilder
+//                    .build()
+//                    .get()
+//                    .uri("http://localhost:8082/movie/" + rating.getMovieId())
+//                    .retrieve()
+//                    .bodyToMono(Movie.class)
+//                    .block();
 
             return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
         }).collect(Collectors.toList());
