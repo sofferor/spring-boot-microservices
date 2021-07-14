@@ -11,6 +11,6 @@ public class MovieResource {
 
     @RequestMapping("/{movieId}")
     public Movie geMovie(@PathVariable("movieId") String movieId) {
-        return new Movie(movieId, "name1");
+        return new Movie(movieId, "name1", "description1");
     }
 }
