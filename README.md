@@ -21,7 +21,11 @@ In order to see the steps to build this application you can look the commits whi
    * The Eureka Server handle the Fault Tolerance. 
 
 This is how the Eureka Server should look like:
-![](/images/Eureka_Server.png?raw=true)
+
+![Eureka_Server](/images/Eureka_Server.png?raw=true)
+
+
 
 This is how the Application should look like:
+
 ![Application](/images/Application.png?raw=true)
