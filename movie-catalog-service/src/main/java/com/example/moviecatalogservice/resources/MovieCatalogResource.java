@@ -32,7 +32,7 @@ public class MovieCatalogResource {
 
         List<String> movieIds = Arrays.asList("id1", "id2");
         List<Rating> ratings = movieIds.stream().map(movieId -> {
-             return restTemplate.getForObject("http://localhost:8083/rating/" + movieId, Rating.class);
+             return restTemplate.getForObject("http://rating-data-service/rating/" + movieId, Rating.class);
 
 //            return webClientBuilder
 //                    .build()
@@ -44,11 +44,11 @@ public class MovieCatalogResource {
 
         }).collect(Collectors.toList());
 
-        UserRating userRating = restTemplate.getForObject("http://localhost:8083/rating/users/" + userId, UserRating.class);
+        UserRating userRating = restTemplate.getForObject("http://rating-data-service/rating/users/" + userId, UserRating.class);
         ratings.addAll(userRating.getRatings());
 
         List<CatalogItem> catalogItems = ratings.stream().map(rating -> {
-             Movie movie = restTemplate.getForObject("http://localhost:8082/movie/" + rating.getMovieId(), Movie.class);
+             Movie movie = restTemplate.getForObject("http://movie-info-service/movie/" + rating.getMovieId(), Movie.class);
 
 //            Movie movie = webClientBuilder
 //                    .build()
