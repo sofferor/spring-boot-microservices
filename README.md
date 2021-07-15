@@ -19,3 +19,9 @@ In order to see the steps to build this application you can look the commits whi
 ### Notes
    * The Eureka Client also handle the load balancing (hence the annotation on RestTemplate called LoadBalanced).
    * The Eureka Server handle the Fault Tolerance. 
+
+This is how the Eureka Server should look like:
+![](E:\User_Data\Documents\Lightshot\Eureka_Server.png)
+
+This is how the Application should look like:
+![](E:\User_Data\Documents\Lightshot\Application.png)
