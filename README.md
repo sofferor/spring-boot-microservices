@@ -19,7 +19,8 @@ This tutorial is from - https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG
 
 ### Notes
    * The Eureka Client also handle the load balancing (hence the annotation on RestTemplate called LoadBalanced).
-   * The Eureka Server handle the Fault Tolerance. 
+   * The Eureka Server handle the Fault Tolerance.
+   * After you run the Eureka Server (discovery-server) you need to wait about two minutes until the Eureka Clients register to the Server.
 
 This is how the Eureka Server should look like:
 
