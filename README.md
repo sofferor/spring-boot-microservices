@@ -2,6 +2,7 @@
 
 This project is a tutorial for building a Microservice Application using Spring Boot & Spring Cloud (with Eureka Client & Server).
 In order to see the steps to build this application you can look the commits which are fully commented.
+This tutorial is from - https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas
 
 ### The steps
 1. Crating three Spring Boot Applications.
